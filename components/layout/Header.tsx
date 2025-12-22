@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import ThemeToggle from "@/components/ui/ThemeToggle";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -28,11 +29,14 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="text-xl font-bold text-gray-900">
+          <Link
+            href="/"
+            className="text-xl font-bold text-gray-900 dark:text-white"
+          >
             Luis Oseguera
           </Link>
 
@@ -43,21 +47,25 @@ export default function Header() {
                 key={item.href}
                 href={item.href}
                 onClick={(e) => scrollToSection(e, item.href)}
-                className="text-gray-700 hover:text-primary-600 transition-colors duration-200"
+                className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
               >
                 {item.label}
               </a>
             ))}
+            <ThemeToggle />
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 text-gray-700 hover:text-primary-600"
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Mobile Menu Button + Theme Toggle */}
+          <div className="md:hidden flex items-center gap-3">
+            <ThemeToggle />
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="p-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400"
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
@@ -68,7 +76,7 @@ export default function Header() {
                 key={item.href}
                 href={item.href}
                 onClick={(e) => scrollToSection(e, item.href)}
-                className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary-600 rounded-lg transition-colors duration-200"
+                className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-primary-600 dark:hover:text-primary-400 rounded-lg transition-colors duration-200"
               >
                 {item.label}
               </a>

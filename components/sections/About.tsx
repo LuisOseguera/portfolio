@@ -32,7 +32,7 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" className="py-20 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -42,8 +42,10 @@ export default function About() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Sobre mí</h2>
-          <div className="w-20 h-1 bg-primary-600 mx-auto"></div>
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            Sobre mí
+          </h2>
+          <div className="w-20 h-1 bg-primary-600 dark:bg-primary-400 mx-auto"></div>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -54,10 +56,10 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
               Ingeniero en Ciencias de la Computación
             </h3>
-            <div className="space-y-4 text-gray-600 leading-relaxed">
+            <div className="space-y-4 text-gray-600 dark:text-gray-300 leading-relaxed">
               <p>
                 Soy un desarrollador full-stack con más de 2 años de experiencia
                 en el sector bancario, especializado en el desarrollo de
@@ -65,7 +67,7 @@ export default function About() {
               </p>
               <p>
                 Actualmente trabajo en{" "}
-                <span className="font-semibold text-gray-900">
+                <span className="font-semibold text-gray-900 dark:text-white">
                   BAC Latam Honduras
                 </span>{" "}
                 como Desarrollador QA, enfocado en ciberseguridad y
@@ -96,19 +98,24 @@ export default function About() {
               return (
                 <motion.div
                   key={item.title}
-                  className="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow duration-300"
+                  className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg hover:shadow-lg transition-shadow duration-300"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.1 * index }}
                 >
-                  <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
-                    <Icon className="text-primary-600" size={24} />
+                  <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900/50 rounded-lg flex items-center justify-center mb-4">
+                    <Icon
+                      className="text-primary-600 dark:text-primary-400"
+                      size={24}
+                    />
                   </div>
-                  <h4 className="font-semibold text-gray-900 mb-2">
+                  <h4 className="font-semibold text-gray-900 dark:text-white mb-2">
                     {item.title}
                   </h4>
-                  <p className="text-sm text-gray-600">{item.description}</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-300">
+                    {item.description}
+                  </p>
                 </motion.div>
               );
             })}

@@ -40,12 +40,12 @@ export default function Hero() {
       className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16"
     >
       {/* Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-primary-50 -z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-primary-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 -z-10"></div>
 
       {/* Animated circles in background */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-primary-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob -z-10"></div>
-      <div className="absolute top-40 right-10 w-72 h-72 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000 -z-10"></div>
-      <div className="absolute -bottom-8 left-20 w-72 h-72 bg-primary-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000 -z-10"></div>
+      <div className="absolute top-20 left-10 w-72 h-72 bg-primary-100 dark:bg-primary-900/30 rounded-full mix-blend-multiply dark:mix-blend-lighten filter blur-xl opacity-70 animate-blob -z-10"></div>
+      <div className="absolute top-40 right-10 w-72 h-72 bg-blue-100 dark:bg-blue-900/30 rounded-full mix-blend-multiply dark:mix-blend-lighten filter blur-xl opacity-70 animate-blob animation-delay-2000 -z-10"></div>
+      <div className="absolute -bottom-8 left-20 w-72 h-72 bg-primary-100 dark:bg-primary-900/30 rounded-full mix-blend-multiply dark:mix-blend-lighten filter blur-xl opacity-70 animate-blob animation-delay-4000 -z-10"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
         <div className="text-center">
@@ -136,7 +136,7 @@ export default function Hero() {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-primary-600 transition-colors duration-200"
+                  className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
                   aria-label={link.name}
                 >
                   <Icon size={28} />
